@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tebak Kode Masuk Quizizz</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    input { padding: 10px; width: 200px; }
+    button { padding: 10px 20px; }
+    #result { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>🧠 Teka-teki Masuk Quizizz</h2>
+  <p>Aku adalah gabungan dari:<br>
+    - 2 huruf pertama dari "Smart"<br>
+    - Digit terakhir dari tahun kemerdekaan Indonesia<br>
+    - Huruf ke-3 dari kata "Logika"<br>
+    - Jumlah huruf dari kata "Cepat"</p>
+  <input type="text" id="answer" placeholder="Masukkan jawaban..." />
+  <button onclick="checkAnswer()">Cek Jawaban</button>
+  <div id="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.toLowerCase();
+      const correct = "sm5g5"; // Jawaban benar
+      const result = document.getElementById("result");
+
+      if (input === correct) {
+        result.innerHTML = `✅ Benar! Klik link berikut untuk masuk ke Quizizz: <br>
+        <a href="https://quizizz.com/join?gc=123456" target="_blank">quizizz.com/join?gc=123456</a>`;
+      } else {
+        result.innerText = "❌ Jawaban salah. Coba lagi!";
+      }
+    }
+  </script>
+</body>
+</html>
